@@ -1,0 +1,1177 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>เว็บไซต์ของฉัน</title>
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"
+  >
+
+  <!-- =========================================================
+       แก้ข้อมูลของคุณได้เฉพาะในกล่อง ME นี้
+       ========================================================= -->
+
+  <script>
+    const ME = {
+
+      // GitHub username
+      github: "pichakornch-67",
+
+      // ชื่อ
+      name: "Pichakorn",
+
+      // สถานะ / ตำแหน่ง
+      role: "First-year Computer Engineering student at Rajamangala University of Technology Isan, Khon Kaen Campus",
+
+      // คำอธิบายสั้น ๆ
+      tagline:
+        "Interested in IoT, programming, and smart technologies.",
+
+      // แนะนำตัว
+      about:
+        "Computer Engineering student interested in programming and IoT. Skilled in C, C++, and Python, with a passion for hands-on learning and problem-solving",
+
+      // สิ่งที่กำลังเรียนรู้
+      learning: [
+        "C, C++, C# and Python",
+        "HTML and CSS",
+        "IoT Development"
+      ],
+
+      // ผลงาน
+      works: [],
+
+      // ช่องทางติดต่อ
+      links: [
+        {
+          label: "GitHub",
+          url: "https://github.com/pichakornch-67"
+        }
+      ],
+
+      // ธีม
+      // ocean | sunset | forest | grape | mono | mono-light
+      theme: "mono"
+
+    };
+  </script>
+
+
+  <style>
+
+    /* =========================
+       สีพื้นฐาน
+       ========================= */
+
+    :root {
+      --bg: #0b1020;
+      --line: #24304f;
+      --text: #e8edf7;
+      --muted: #93a1c0;
+      --surface: rgba(255,255,255,.05);
+
+      --mono:
+        ui-monospace,
+        "SF Mono",
+        Menlo,
+        Consolas,
+        monospace;
+    }
+
+
+    /* =========================
+       ธีม
+       ========================= */
+
+    :root,
+    [data-theme="ocean"] {
+      --accent: #38bdf8;
+      --accent-soft: #0ea5e9;
+      --glow1: #1d2a52;
+      --glow2: #10305c;
+    }
+
+    [data-theme="sunset"] {
+      --accent: #fb923c;
+      --accent-soft: #f97316;
+      --glow1: #4a2418;
+      --glow2: #5c2b10;
+    }
+
+    [data-theme="forest"] {
+      --accent: #34d399;
+      --accent-soft: #10b981;
+      --glow1: #14342a;
+      --glow2: #0f3d2e;
+    }
+
+    [data-theme="grape"] {
+      --accent: #c084fc;
+      --accent-soft: #a855f7;
+      --glow1: #2e1d52;
+      --glow2: #3d1a5c;
+    }
+
+    [data-theme="mono"] {
+      --accent: #e2e8f0;
+      --accent-soft: #cbd5e1;
+      --glow1: #1e293b;
+      --glow2: #0f172a;
+    }
+
+    [data-theme="mono-light"] {
+      --accent: #334155;
+      --accent-soft: #475569;
+      --glow1: #dbe3ee;
+      --glow2: #e6ebf3;
+
+      --bg: #f7f9fc;
+      --line: #ccd6e4;
+      --text: #0f172a;
+      --muted: #52627d;
+      --surface: rgba(15,23,42,.04);
+    }
+
+
+    /* =========================
+       พื้นฐาน
+       ========================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      color: var(--text);
+
+      font-family:
+        "Segoe UI",
+        "Noto Sans Thai",
+        system-ui,
+        sans-serif;
+
+      line-height: 1.75;
+
+      background:
+        radial-gradient(
+          1000px 460px at 12% -10%,
+          var(--glow1) 0,
+          transparent 60%
+        ),
+        radial-gradient(
+          820px 400px at 92% 0,
+          var(--glow2) 0,
+          transparent 55%
+        ),
+        var(--bg);
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 22px 80px;
+    }
+
+
+    /* =========================
+       Header
+       ========================= */
+
+    .hero {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+
+      padding: 64px 0 8px;
+
+      flex-wrap: wrap;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+
+      object-fit: cover;
+      flex-shrink: 0;
+
+      background: var(--surface);
+    }
+
+    .avatar-fallback {
+      width: 96px;
+      height: 96px;
+
+      border-radius: 50%;
+      flex-shrink: 0;
+
+      border: 2px solid var(--accent);
+
+      background: var(--surface);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 38px;
+      font-weight: 600;
+
+      color: var(--accent);
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .role {
+      font:
+        600 12px/1 var(--mono);
+
+      letter-spacing: .14em;
+      text-transform: uppercase;
+
+      color: var(--accent);
+
+      margin: 0 0 8px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 6vw, 46px);
+
+      line-height: 1.15;
+
+      margin: 0 0 8px;
+
+      letter-spacing: -.02em;
+    }
+
+    .tagline {
+      font-size: clamp(17px, 2.6vw, 20px);
+
+      color: var(--text);
+
+      margin: 0;
+
+      opacity: .92;
+    }
+
+    .about {
+      color: var(--muted);
+
+      margin: 26px 0 0;
+
+      max-width: 62ch;
+    }
+
+
+    /* =========================
+       Links
+       ========================= */
+
+    .links {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      padding: 0;
+
+      margin: 24px 0 0;
+
+      list-style: none;
+    }
+
+    .links a {
+      display: inline-block;
+
+      border: 1px solid var(--line);
+
+      border-radius: 999px;
+
+      padding: 9px 20px;
+
+      color: var(--text);
+
+      text-decoration: none;
+
+      font-size: 15px;
+
+      transition:
+        border-color .15s ease,
+        color .15s ease,
+        transform .15s ease;
+    }
+
+    .links a:hover,
+    .links a:focus-visible {
+      border-color: var(--accent);
+      color: var(--accent);
+
+      transform: translateY(-1px);
+    }
+
+
+    /* =========================
+       Section
+       ========================= */
+
+    section {
+      margin-top: 52px;
+    }
+
+    h2 {
+      font:
+        600 12px/1 var(--mono);
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+
+      color: var(--muted);
+
+      border-bottom: 1px solid var(--line);
+
+      padding-bottom: 10px;
+
+      margin: 0 0 20px;
+    }
+
+
+    /* =========================
+       Learning
+       ========================= */
+
+    .learning {
+      list-style: none;
+
+      padding: 0;
+
+      margin: 0;
+    }
+
+    .learning li {
+      border-left: 2px solid var(--accent);
+
+      padding: 2px 0 2px 16px;
+
+      margin-bottom: 14px;
+
+      color: var(--muted);
+    }
+
+
+    /* =========================
+       Works
+       ========================= */
+
+    .works {
+      display: grid;
+
+      gap: 14px;
+
+      grid-template-columns:
+        repeat(
+          auto-fill,
+          minmax(240px, 1fr)
+        );
+    }
+
+    .work {
+      border: 1px solid var(--line);
+
+      border-radius: 12px;
+
+      padding: 16px 18px;
+
+      background: var(--surface);
+    }
+
+    .work h3 {
+      margin: 0 0 6px;
+
+      font-size: 17px;
+    }
+
+    .work p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 14.5px;
+    }
+
+    .work a {
+      color: var(--accent);
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      display: inline-block;
+
+      margin-top: 10px;
+    }
+
+    .work a:hover {
+      text-decoration: underline;
+    }
+
+    .empty {
+      border: 1px dashed var(--line);
+
+      border-radius: 12px;
+
+      padding: 26px 20px;
+
+      color: var(--muted);
+
+      text-align: center;
+
+      font-size: 15px;
+    }
+
+
+    /* =========================
+       Network Panel
+       ========================= */
+
+    .panel {
+      border: 1px solid var(--line);
+
+      border-radius: 14px;
+
+      background: var(--surface);
+
+      padding: 4px 20px 16px;
+    }
+
+    .row {
+      display: grid;
+
+      grid-template-columns:
+        minmax(130px, 1fr)
+        minmax(0, 1.5fr);
+
+      gap: 12px;
+
+      padding: 11px 0;
+
+      border-bottom: 1px dashed var(--line);
+
+      align-items: baseline;
+    }
+
+    .row:last-child {
+      border-bottom: 0;
+    }
+
+    .row dt {
+      color: var(--muted);
+
+      font-size: 14px;
+
+      margin: 0;
+    }
+
+    .row dd {
+      margin: 0;
+
+      font-family: var(--mono);
+
+      font-size: 14px;
+
+      color: var(--accent);
+
+      word-break: break-all;
+    }
+
+    .row .note {
+      display: block;
+
+      color: var(--muted);
+
+      font-family: inherit;
+
+      font-size: 12.5px;
+
+      line-height: 1.5;
+
+      margin-top: 3px;
+    }
+
+    .hint {
+      color: var(--muted);
+
+      font-size: 14px;
+
+      margin: 14px 0 0;
+    }
+
+
+    /* =========================
+       Footer
+       ========================= */
+
+    footer {
+      margin-top: 56px;
+
+      padding-top: 22px;
+
+      border-top: 1px solid var(--line);
+
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--accent);
+    }
+
+
+    /* =========================
+       Mobile
+       ========================= */
+
+    @media (max-width: 520px) {
+
+      .hero {
+        padding-top: 44px;
+
+        gap: 16px;
+      }
+
+      .avatar,
+      .avatar-fallback {
+        width: 72px;
+        height: 72px;
+
+        font-size: 28px;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+
+        gap: 2px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="wrap">
+
+    <!-- =========================
+         Header
+         ========================= -->
+
+    <header class="hero">
+
+      <img
+        class="avatar"
+        id="avatar"
+        alt=""
+        width="96"
+        height="96"
+      >
+
+      <div class="hero-text">
+
+        <p
+          class="role"
+          id="role"
+        ></p>
+
+        <h1
+          id="name"
+        ></h1>
+
+        <p
+          class="tagline"
+          id="tagline"
+        ></p>
+
+      </div>
+
+    </header>
+
+
+    <!-- About -->
+
+    <p
+      class="about"
+      id="about"
+    ></p>
+
+
+    <!-- Links -->
+
+    <ul
+      class="links"
+      id="links"
+    ></ul>
+
+
+    <!-- =========================
+         Learning
+         ========================= -->
+
+    <section>
+
+      <h2>กำลังเรียนรู้</h2>
+
+      <ul
+        class="learning"
+        id="learning"
+      ></ul>
+
+    </section>
+
+
+    <!-- =========================
+         Works
+         ========================= -->
+
+    <section>
+
+      <h2>ผลงาน</h2>
+
+      <div
+        class="works"
+        id="works"
+      ></div>
+
+    </section>
+
+
+    <!-- =========================
+         Network Information
+         ========================= -->
+
+    <section>
+
+      <h2>ข้อมูลการเชื่อมต่อของหน้านี้</h2>
+
+      <div class="panel">
+
+        <dl id="netpanel"></dl>
+
+        <p class="hint">
+          กด F12 เลือกแท็บ Network แล้วกด Ctrl+F5 เพื่อเปรียบเทียบค่า
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         Footer
+         ========================= -->
+
+    <footer>
+
+      สร้างด้วย HTML, CSS และ JavaScript
+      · โฮสต์บน GitHub Pages
+      ·
+
+      <a
+        id="repolink"
+        href="https://github.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ดูซอร์สโค้ดของหน้านี้
+      </a>
+
+    </footer>
+
+  </div>
+
+
+  <!-- =========================================================
+       JavaScript
+       ========================================================= -->
+
+  <script>
+
+    /* =========================
+       Helper
+       ========================= */
+
+    const $ = (id) =>
+      document.getElementById(id);
+
+
+    /* =========================
+       ตรวจข้อมูล ME
+       ========================= */
+
+    const themeList = [
+      "ocean",
+      "sunset",
+      "forest",
+      "grape",
+      "mono",
+      "mono-light"
+    ];
+
+    const selectedTheme =
+      themeList.includes(ME.theme)
+        ? ME.theme
+        : "ocean";
+
+
+    /* =========================
+       แสดงข้อมูล
+       ========================= */
+
+    document.title =
+      ME.name || "Portfolio";
+
+    document.documentElement.dataset.theme =
+      selectedTheme;
+
+    $("role").textContent =
+      ME.role || "";
+
+    $("name").textContent =
+      ME.name || "";
+
+    $("tagline").textContent =
+      ME.tagline || "";
+
+    $("about").textContent =
+      ME.about || "";
+
+
+    /* =========================
+       รูปโปรไฟล์ GitHub
+       ========================= */
+
+    const avatar =
+      $("avatar");
+
+    avatar.alt =
+      "รูปโปรไฟล์ของ " +
+      (ME.name || "ผู้ใช้");
+
+
+    avatar.addEventListener(
+      "error",
+      function () {
+
+        const box =
+          document.createElement("div");
+
+        box.className =
+          "avatar-fallback";
+
+        box.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+        const firstLetter =
+          (ME.name || "?")
+            .trim()
+            .charAt(0)
+            .toUpperCase();
+
+        box.textContent =
+          firstLetter || "?";
+
+        avatar.replaceWith(box);
+
+      },
+      { once: true }
+    );
+
+
+    if (ME.github) {
+
+      avatar.src =
+        "https://github.com/" +
+        encodeURIComponent(ME.github) +
+        ".png?size=192";
+
+    } else {
+
+      avatar.dispatchEvent(
+        new Event("error")
+      );
+
+    }
+
+
+    /* =========================
+       Learning
+       ========================= */
+
+    const learning =
+      $("learning");
+
+    for (
+      const item of ME.learning || []
+    ) {
+
+      if (!item) continue;
+
+      const li =
+        document.createElement("li");
+
+      li.textContent =
+        item;
+
+      learning.appendChild(li);
+
+    }
+
+
+    /* =========================
+       Links
+       ========================= */
+
+    const links =
+      $("links");
+
+    for (
+      const link of ME.links || []
+    ) {
+
+      if (
+        !link ||
+        !link.url ||
+        !link.label
+      ) {
+        continue;
+      }
+
+      const li =
+        document.createElement("li");
+
+      const a =
+        document.createElement("a");
+
+      a.href =
+        link.url;
+
+      a.textContent =
+        link.label;
+
+      a.target =
+        "_blank";
+
+      a.rel =
+        "noopener noreferrer";
+
+      li.appendChild(a);
+
+      links.appendChild(li);
+
+    }
+
+
+    /* =========================
+       ผลงาน
+       ========================= */
+
+    const works =
+      $("works");
+
+
+    if (
+      !Array.isArray(ME.works) ||
+      ME.works.length === 0
+    ) {
+
+      const box =
+        document.createElement("div");
+
+      box.className =
+        "empty";
+
+      box.textContent =
+        "ยังไม่มีผลงานในหน้านี้ กำลังเรียนรู้อยู่ แล้วจะกลับมาเพิ่มเรื่อย ๆ";
+
+      works.appendChild(box);
+
+    } else {
+
+      for (
+        const w of ME.works
+      ) {
+
+        if (!w) continue;
+
+        const card =
+          document.createElement("div");
+
+        card.className =
+          "work";
+
+
+        const h3 =
+          document.createElement("h3");
+
+        h3.textContent =
+          w.title || "ผลงาน";
+
+
+        const p =
+          document.createElement("p");
+
+        p.textContent =
+          w.desc || "";
+
+
+        card.appendChild(h3);
+
+        card.appendChild(p);
+
+
+        if (w.url) {
+
+          const a =
+            document.createElement("a");
+
+          a.href =
+            w.url;
+
+          a.textContent =
+            "ดูผลงาน ↗";
+
+          a.target =
+            "_blank";
+
+          a.rel =
+            "noopener noreferrer";
+
+          card.appendChild(a);
+
+        }
+
+
+        works.appendChild(card);
+
+      }
+
+    }
+
+
+    /* =========================
+       GitHub Repository
+       ========================= */
+
+    const repolink =
+      $("repolink");
+
+
+    if (ME.github) {
+
+      repolink.href =
+        "https://github.com/" +
+        encodeURIComponent(ME.github) +
+        "/" +
+        encodeURIComponent(ME.github) +
+        ".github.io";
+
+    }
+
+
+    /* =========================
+       Performance API
+       ========================= */
+
+    function ms(value) {
+
+      if (
+        typeof value !== "number" ||
+        value < 0 ||
+        Number.isNaN(value)
+      ) {
+
+        return "—";
+
+      }
+
+      return (
+        Math.round(value) +
+        " ms"
+      );
+
+    }
+
+
+    function addRow(
+      label,
+      value,
+      note
+    ) {
+
+      const row =
+        document.createElement("div");
+
+      row.className =
+        "row";
+
+
+      const dt =
+        document.createElement("dt");
+
+      dt.textContent =
+        label;
+
+
+      const dd =
+        document.createElement("dd");
+
+      dd.textContent =
+        value;
+
+
+      const small =
+        document.createElement("span");
+
+      small.className =
+        "note";
+
+      small.textContent =
+        note;
+
+
+      dd.appendChild(small);
+
+      row.appendChild(dt);
+
+      row.appendChild(dd);
+
+      $("netpanel")
+        .appendChild(row);
+
+    }
+
+
+    window.addEventListener(
+      "load",
+      function () {
+
+        setTimeout(
+          function () {
+
+            try {
+
+              const entries =
+                performance.getEntriesByType(
+                  "navigation"
+                );
+
+              const nav =
+                entries.length > 0
+                  ? entries[0]
+                  : null;
+
+
+              addRow(
+                "Domain name",
+                location.hostname ||
+                  "(เปิดจากไฟล์ในเครื่อง)",
+                "ชื่อโดเมนต้องถูกแปลงเป็น IP address ผ่าน DNS ก่อน จึงจะติดต่อ server ได้"
+              );
+
+
+              addRow(
+                "Protocol",
+                location.protocol || "—",
+                "https คือ HTTP ที่เพิ่มการเข้ารหัสและการยืนยันตัวตน server ด้วย certificate"
+              );
+
+
+              if (nav) {
+
+                addRow(
+                  "HTTP version",
+                  nav.nextHopProtocol || "—",
+                  "h2 คือ HTTP/2 และ h3 คือ HTTP/3 ซึ่งช่วยให้ส่งข้อมูลหลายรายการได้อย่างมีประสิทธิภาพ"
+                );
+
+
+                addRow(
+                  "DNS lookup",
+                  ms(
+                    nav.domainLookupEnd -
+                    nav.domainLookupStart
+                  ),
+                  "เวลาที่ใช้แปลงชื่อโดเมนเป็น IP address ถ้าได้ 0 ms อาจหมายถึงมีข้อมูลอยู่ใน cache แล้ว"
+                );
+
+
+                addRow(
+                  "Connection + TLS",
+                  ms(
+                    nav.connectEnd -
+                    nav.connectStart
+                  ),
+                  "เวลาสร้างการเชื่อมต่อ รวมขั้นตอน TLS handshake ก่อนเริ่มรับส่งข้อมูลจริง"
+                );
+
+
+                addRow(
+                  "TTFB",
+                  ms(
+                    nav.responseStart -
+                    nav.requestStart
+                  ),
+                  "Time To First Byte คือเวลาตั้งแต่ส่ง request จนได้รับข้อมูลไบต์แรกกลับมา"
+                );
+
+              }
+
+            } catch (error) {
+
+              console.warn(
+                "ไม่สามารถอ่าน Performance API ได้:",
+                error
+              );
+
+              addRow(
+                "Performance API",
+                "ไม่สามารถอ่านค่าได้",
+                "Browser นี้ไม่รองรับข้อมูลบางส่วนของ Performance API"
+              );
+
+            }
+
+          },
+          0
+        );
+
+      }
+    );
+
+  </script>
+
+</body>
+
+</html>
